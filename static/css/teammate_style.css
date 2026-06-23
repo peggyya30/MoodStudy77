@@ -5289,3 +5289,132 @@ button[onclick*="submitPressure"]:hover {
     height: 96px;
   }
 }
+
+
+/* ===== AI 拆解優先級：緊急 / 還好 / 不緊急 ===== */
+.urgency-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 58px;
+  padding: 5px 9px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.urgency-badge.urgent,
+.urgency-dot.urgent {
+  background: #ffe8e5;
+  color: #b9362b;
+  border: 1px solid #f3aaa3;
+}
+
+.urgency-badge.normal,
+.urgency-dot.normal {
+  background: #fff6dc;
+  color: #8a5b00;
+  border: 1px solid #e9c766;
+}
+
+.urgency-badge.not-urgent,
+.urgency-dot.not-urgent {
+  background: #eaf8ef;
+  color: #2f7d45;
+  border: 1px solid #9fd8ad;
+}
+
+.urgency-summary {
+  margin: 10px 0 12px;
+  padding: 12px;
+  border-radius: 16px;
+  background: rgba(255, 250, 242, .9);
+  border: 1px solid rgba(218, 184, 128, .45);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.urgency-dot {
+  display: inline-flex;
+  padding: 5px 9px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.urgency-summary strong {
+  color: #5a3b18;
+  font-size: 13px;
+}
+
+.ai-status-card p {
+  color: #6e563b;
+  line-height: 1.6;
+}
+
+.ai-status-note {
+  margin-top: 8px;
+  font-weight: 800;
+}
+
+@media (max-width: 760px) {
+  .subtask-row {
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .urgency-badge {
+    margin-left: 0;
+  }
+}
+
+
+/* ===== AI 拆解來源標籤 ===== */
+.source-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 9px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.source-badge.gemini {
+  background: #e8f1ff;
+  color: #2158a8;
+  border: 1px solid #98bdf0;
+}
+
+.source-badge.fallback {
+  background: #fff4d9;
+  color: #8a5b00;
+  border: 1px solid #e8c262;
+}
+
+.source-badge.manual {
+  background: #f0e9ff;
+  color: #6c3bc2;
+  border: 1px solid #bca1ef;
+}
+
+.source-badge.none {
+  background: #f3f3f3;
+  color: #777;
+  border: 1px solid #ddd;
+}
+
+.task-breakdown-head {
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 760px) {
+  .source-badge {
+    width: fit-content;
+  }
+}
